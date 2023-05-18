@@ -48,7 +48,7 @@ def handle_voice_message(message):
         sf.write(file1, y, sr)
         convert("voice_message.wav")
         prompt = f"Я предоставлю тебе текст на русском языке. Твоя задача - расставить в нём запятые и точки. Если ты видишь слово, вообще не подходящее по контексту, то наверняка на его месте стоит слово с похожим звучанием и написанием. Тебе стоит заменить его. Например, если ты видишь слово 'не', но оно не вписывается в контекст, то ты ставишь слово 'мне', ведь оно вписывается. В качестве ответа выдай строку исправленного текста c изменёнными словами и поставленными знаками. Вот текст: {text}"
-# that prompt should be changed
+# this prompt should be changed
         bot.send_message(message.chat.id, ask(prompt))
         os.remove("voice_message.wav")
         os.remove("voice_message.mp3")
